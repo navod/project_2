@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+  </head>
+  <body>
+    <form method="POST" class="post-form" action="/update/{{students.id}}">
+	<input name="id" id="id" required maxlength="20" class="btn btn-primary" type="hidden" value="{{ students.id}}">
+      {%csrf_token %}
+      <div class="container">
+        <br />
+        <div class="form-group row">
+          <label class="col-sm-1 col-form-label"></label>
+          <div class="col-sm-4">
+            <h3>Enter Details</h3>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Student Name:</label>
+          <input name="f_name" type="text" value="{{ students.f_name}}">
+        </div>
+
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Last Name:</label>
+          <input name="l_name" type="text" value="{{ students.l_name}}">
+        </div>
+
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Student Email:</label>
+          <input name="email" type="email" value="{{ students.email}}">
+        </div>
+
+        <div class="form-group row">
+          <label class="col-sm-1 col-form-label"></label>
+          <div class="col-sm-4">
+            <button type="submit" class="btn btn-primary">Update</button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <script></script>
+  </body>
+</html>
